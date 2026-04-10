@@ -1,0 +1,114 @@
+PRACTICAL TITLE:
+Demonstration of Network Diagnostic Tools (ping, ipconfig, tracert, arp, netstat, whois)
+
+1. AIM
+To study and demonstrate the use of various network diagnostic tools in Windows for analyzing network connectivity and performance.
+
+2. THEORY
+Network diagnostic tools are used to troubleshoot and analyze network-related issues. These tools help in checking connectivity, viewing IP configuration, tracing routes, and monitoring active connections.
+Ping: Tests connectivity between two devices.
+Ipconfig: Displays IP configuration details.
+Tracert: Shows the path taken by data packets.
+ARP: Maps IP addresses to MAC addresses.
+Netstat: Displays active connections and ports.
+Whois: Provides domain registration details.
+
+3. PROCEDURE & EXECUTION
+1. Ping Command
+ping google.com
+
+Ping statistics for 142.250.182.14:
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+Minimum = 5ms, Maximum = 6ms, Average = 5ms
+
+2. IP Configuration Command
+ipconfig /all
+
+Host Name . . . . . . . . . . . . : PC-10
+Node Type . . . . . . . . . . . . : Hybrid
+IP Routing Enabled. . . . . . . . : No
+Ethernet adapter Ethernet:
+Description . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+Physical Address. . . . . . . . . : 30-13-8B-66-17-04
+DHCP Enabled. . . . . . . . . . . : Yes
+Autoconfiguration IPv4 Address. . : 169.254.111.42
+Subnet Mask . . . . . . . . . . . : 255.255.0.0
+Wireless LAN adapter Wi-Fi:
+Description . . . . . . . . . . . : Realtek RTL8852BE WiFi 6 Adapter
+Physical Address. . . . . . . . . : 28-D0-43-1F-C4-F6
+DHCP Enabled. . . . . . . . . . . : Yes
+IPv4 Address. . . . . . . . . . . : 10.86.45.212
+Subnet Mask . . . . . . . . . . . : 255.255.240.0
+Default Gateway . . . . . . . . . : 10.86.32.1
+DNS Servers . . . . . . . . . . . : 10.2.1.13
+
+3. Trace Route Command
+tracert google.com
+
+1 9 ms 2 ms 2 ms 10.86.32.2
+2 10 ms 2 ms 3 ms 172.16.10.67
+3 29 ms 2 ms 2 ms 192.168.0.1
+4 10 ms 4 ms 3 ms 10.118.95.253
+5 * * * Request timed out
+6 6 ms 5 ms 5 ms 10.119.234.162
+7 13 ms 4 ms 9 ms 72.14.195.56
+8 12 ms 5 ms 5 ms 142.251.77.189
+9 13 ms 6 ms 10 ms 209.85.252.71
+10 10 ms 6 ms 5 ms 142.250.182.14
+Trace complete.
+
+4. ARP Command
+arp -a
+
+Internet Address Physical Address Type
+10.86.32.1 00-00-5e-00-01-67 dynamic
+10.86.32.2 58-61-63-f8-c8-d9 dynamic
+10.86.47.255 ff-ff-ff-ff-ff-ff static
+224.0.0.2 01-00-5e-00-00-02 static
+224.0.0.18 01-00-5e-00-00-12 static
+224.0.0.22 01-00-5e-00-00-16 static
+224.0.0.251 01-00-5e-00-00-fb static
+224.0.0.252 01-00-5e-00-00-fc static
+239.255.255.250 01-00-5e-7f-ff-fa static
+255.255.255.255 ff-ff-ff-ff-ff-ff static
+
+5. Netstat Command
+netstat -an
+
+Proto Local Address Foreign Address State
+TCP 0.0.0.0:135 0.0.0.0:0 LISTENING
+TCP 0.0.0.0:445 0.0.0.0:0 LISTENING
+TCP 0.0.0.0:3306 0.0.0.0:0 LISTENING
+TCP 0.0.0.0:3389 0.0.0.0:0 LISTENING
+TCP 10.86.45.212:7680 10.17.3.58:61439 ESTABLISHED
+TCP 10.86.45.212:53519 142.250.193.138:443 ESTABLISHED
+TCP 10.86.45.212:54646 52.110.21.104:443 ESTABLISHED
+TCP 10.86.45.212:55364 172.64.155.209:443 ESTABLISHED
+TCP 10.86.45.212:59280 172.217.26.10:443 ESTABLISHED
+TCP 127.0.0.1:49671 127.0.0.1:49672 ESTABLISHED
+UDP 0.0.0.0:123 :
+UDP 10.86.45.212:137 :
+UDP 10.86.45.212:1900 :
+
+6. Whois Command
+whois google.com
+
+Domain Name: google.com
+Registry Domain ID: 2138514_DOMAIN_COM-VRSN
+Registrar: MarkMonitor, Inc.
+Creation Date: 1997-09-15
+Updated Date: 2024-08-02
+Expiration Date: 2028-09-13
+Registrant Organization: Google LLC
+Registrant Country: US
+Name Server: ns1.google.com
+Name Server: ns2.google.com
+Name Server: ns3.google.com
+Name Server: ns4.google.com
+Domain Status: clientTransferProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientDeleteProhibited
+DNSSEC: unsigned
+Last update of WHOIS database: 2026-04-10 <<<
+
